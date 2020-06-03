@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>musinsaTest</title>
+</head>
+<body>
+    <style>
+        body {
+            font-size: 1em;
+            text-align: center;
+        }
+        .input {
+            width: 65%;
+            height: 30px;
+            font-size: 1em;
+        }
+        .btn {
+            margin-left: 10px;
+            height: 35px;
+            background: white;
+            border: 1px solid rgb(216,216,216);
+        }
+    </style>
+    <h2 class="title">Shortening Service</h2>
+    <input class="input" type="text" placeholder="변환할 URL을 입력하세요.">
+    <button class="btn">변환</button>
+    <div><p>결과 : <a id="result" target="_blank"></a></p></div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".btn").click(function() {
+            const url = $(".input").val();
+            console.log('url', url);
+            $.post('http://localhost/encode/url', {url:url}, function(result) {
+              console.log('??', result);
+              $("#result").text(result);
+              $("#result").attr("href", result);
+            }).fail(function() {
+                alert("실패하였습니다.");
+            });
+        });
+    });
+</script>
+</html>

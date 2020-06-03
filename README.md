@@ -1,11 +1,18 @@
-#Shortening Service 
 
-###1. Build
+Shortening Service 
+=======================
+
+
+1.Build
+---------
+
     $ mvn package -DskipTests
+    
   - mvn package 명령어를 통해서 ./target/musinsa-0.1.jar 파일을 만들어 줍니다.
   - musinsa-0.1.jar 파일을 linux 서버 폴더로 upload 합니다.   
 
-##1.1 linux java 설치  
+1.1 linux java 설치
+------------------
 linux 서버에 java가 설치되어 있는 않은경우 java 설치가 필요합니다.
 java 설치가 되어 있다면 바로 2 단계로 가시면 됩니다.
 
@@ -13,7 +20,8 @@ java 설치가 되어 있다면 바로 2 단계로 가시면 됩니다.
     $ apt-get install openjdk-8-jdk
     $ java -version
     
-###2. Start & Test
+2.Start & Test
+------------------
 
 - linux 서버의 musinsa-0.1.jar 파일이 있는 directory 로 이동합니다.
     

@@ -13,7 +13,7 @@ public class TestRestController {
     private final TestService testService;
 
     @PostMapping("/encode/url")
-    public ResponseEntity<String> getShortenUrl(@RequestParam("url") String url) {
+    public ResponseEntity<String> getShortUrl(@RequestParam("url") String url) {
         try {
             String shortUrl = testService.getShortUrl(url);
             return new ResponseEntity<>(shortUrl, HttpStatus.OK);
@@ -37,7 +37,7 @@ public class TestRestController {
     }
 
     @GetMapping("/count/url")
-    public ResponseEntity<Integer> getCallCount(@RequestBody String url) {
+    public ResponseEntity<Integer> getCallCount(String url) {
         try {
             Integer callCount = testService.getCallCount(url);
             return new ResponseEntity<>(callCount, HttpStatus.OK);
